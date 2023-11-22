@@ -8,14 +8,14 @@ We have generated the initial code using the ChatGPT API and then corrected erro
 You can manually clone and configure the example yourself:
 
 ```
-git clone
+git clone https://github.com/jpmorgan-payments/digital-signature.git
 ```
 
 This example includes several different language implementations.
 
 Pick a programming langauge:
 
-- [GoLang](./go/)
+- [Go](./go/)
 - [JavaScript](./js/)
 - [Python](./python/)
 - [Java](./java/)
@@ -29,3 +29,8 @@ openssl genrsa -out keypair.pem 2048
 openssl rsa -in keypair.pem -pubout -out publickey.crt
 openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in keypair.pem -out pkcs8.key
 ```
+
+## Contribution
+
+These are simple example snippets. 
+We welcome any additional language contributions and any performance improvements/suggestions.
