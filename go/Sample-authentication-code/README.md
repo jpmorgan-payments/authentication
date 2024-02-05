@@ -1,4 +1,4 @@
-# Digital Signature GoLang snippet
+# Digital Signature/JWT GoLang snippet
 
 A snippet of Golang code to show how to create a digital signature
 
