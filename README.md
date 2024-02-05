@@ -1,27 +1,11 @@
-# Generate a Digital Signature for hitting payments APIs
+# J.P. Morgan Authentication examples
 
-When accessing our Payments API we require a Digital Signature (also known as JWT Token) to be used as a post body.
-This digital signature is an encoded version of your JSON body. 
+Within this repository you can find example code for accessing our Payments APIs.
+We have split the code by programming language for ease of use.
+Each folder contains:
 
-This example code shows you how to generate the digital signature to hit the POST endpoints on our APIs.
-We have generated the initial code using the ChatGPT API and then corrected errors manually.
+- sample-authentication-code repository: This contains code scripts for generating digital signatures (also known as JWTs), gathering access tokens and generating certificates.
 
-## How to run locally
-
-You can manually clone and configure the example yourself:
-
-```
-git clone https://github.com/jpmorgan-payments/digital-signature.git
-```
-
-This example includes several different language implementations.
-
-Pick a programming langauge:
-
-- [Go](./go/)
-- [JavaScript](./js/)
-- [Python](./python/)
-- [Java](./java/)
 
 ### Generating test certificates
 

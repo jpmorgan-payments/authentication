@@ -1,24 +1,24 @@
 package digital_signature
 
 import (
-    "fmt"
-    "testing"
-    "os"
-	"github.com/joho/godotenv"
-	"github.com/golang-jwt/jwt/v5"
+	"fmt"
+	"os"
 	"strings"
-)
+	"testing"
 
+	"github.com/golang-jwt/jwt/v5"
+	"github.com/joho/godotenv"
+)
 
 func setupSuite(t testing.TB) string {
 	godotenv.Load()
-    return  os.Getenv("PRIVATE")
+	return os.Getenv("PRIVATE")
 }
 
-func TestDigSignGenerated(t *testing.T)  {
-    privateKey := strings.ReplaceAll(setupSuite(t), "\\n", "\n")
+func TestDigSignGenerated(t *testing.T) {
+	privateKey := strings.ReplaceAll(setupSuite(t), "\\n", "\n")
 
-    result := generate_digital_signature(privateKey, map[string]interface{}{"foo": "bar"})
+	result := generate_digital_signature(privateKey, map[string]interface{}{"foo": "bar"})
 	// Verify that the token can be parsed and verified
 	token, err := jwt.Parse(result, func(token *jwt.Token) (interface{}, error) {
 		// Verify that the signing method is RS256
