@@ -3,7 +3,7 @@ name: Digital Signature/JWT Tests
 on:
   workflow_dispatch:
   push:
-    branches: ["re-org"]
+    branches: ["main"]
   pull_request:
     branches: ["main"]
 env:
