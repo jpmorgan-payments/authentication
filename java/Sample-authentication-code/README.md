@@ -1,16 +1,29 @@
-# Digital Signature Java
+# Access Token Generator
+The purpose of this tool is to retrieve an access token using provided client details
 
-A Java implementation of generating a digital signature
+## Required Client Details
 
-## Requirements
+The following values need to be updated in Constants.java:
+* CLIENT_ID
+* RESOURCE
+* CERTIFICATE_FILE_PATH
+* PRIVATE_KEY_FILE_PATH
 
-- Java installed
-- Configured environment variables
 
-## How to run
+## How To Run
+Requirements:
+* JDK 11 or newer
+* Maven
 
-You can run this code by running the tests or by including it in your codebase.
+### Run in IDE
+1. Update values in Constants.java
+2. Run main() in TokenGeneratorApplication
+3. Extract access token from console logs
 
-1. Add your PUBLIC/PRIVATE key into environment variables. You can find information on generating certificates at in our [readme](../README.md)
+### Run Executable JAR
+1. Update values in Constants.java
+2. Use Maven to package JAR
+3. From Command line: "java -jar [path to JAR]\token-generator-0.0.1-SNAPSHOT-jar-with-dependencies.jar"
+4. Extract access token from console logs
 
-2. Run the test in [the test folder](./src/test/java/com/jpmorgan/payments/digital_signature/JWTTest.java)
+
