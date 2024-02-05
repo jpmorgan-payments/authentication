@@ -1,5 +1,5 @@
 {
-  "name": "J.P.Morgan-TokenGenerator-SDK",
+  "name": "sample-auth-code",
   "version": "1.0.0",
   "description": "Collection of scripts which can be used to simplify client on-boarding.",
   "main": "generateCertificates.js",
