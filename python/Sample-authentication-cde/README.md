@@ -1,4 +1,4 @@
-# Digital Signature Python
+# Digital Signature/JWT Python
 
 A python implementation of generating a digital signature
 

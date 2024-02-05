@@ -1,6 +1,6 @@
 import unittest
 import jwt
-from digital_signature import generate_digital_signature
+from getJWT import generate_digital_signature
 from dotenv import load_dotenv
 import os
 
