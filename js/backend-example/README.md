@@ -21,7 +21,7 @@ yarn install
 yarn start
 ```
 
-3. Import the postman collection ([info here](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/)) to test out the server connection.
+3. Import the postman collection at the top of this repo to test out the server connection. Instructions for importing postman collections can be found ([here](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/))
 
 ## How to run - SSL
 
