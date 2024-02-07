@@ -6,6 +6,15 @@ from requests.exceptions import RequestException
 from unittest.mock import patch, MagicMock
 from getAccessToken import get_access_token
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+CLIENT_ID=os.getenv('CLIENT_ID')
+CLIENT_SECRET=os.getenv('CLIENT_SECRET')
+ACCESS_TOKEN_URL=os.getenv('ACCESS_TOKEN_URL')
+
+
 class TestGetAccessToken(unittest.TestCase):
     @patch('requests.post')
     def test_get_access_token_success(self, mock_post):
@@ -15,7 +24,7 @@ class TestGetAccessToken(unittest.TestCase):
         mock_post.return_value = response_mock
 
         # Call the function
-        access_token = get_access_token("mock_url", "mock_client_id", "mock_client_secret")
+        access_token = get_access_token(ACCESS_TOKEN_URL, CLIENT_ID, CLIENT_SECRET)
 
         # Assertions
         mock_post.assert_called_once_with(
@@ -32,7 +41,7 @@ class TestGetAccessToken(unittest.TestCase):
 
         # Call the function
         with self.assertRaises(RequestException):
-            get_access_token("mock_url", "mock_client_id", "mock_client_secret")
+            get_access_token(ACCESS_TOKEN_URL, CLIENT_ID, CLIENT_SECRET)
 
 if __name__ == '__main__':
     unittest.main()
