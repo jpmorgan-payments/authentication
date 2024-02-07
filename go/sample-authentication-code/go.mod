@@ -1,4 +1,4 @@
-module digital_signature
+module sample_authentication_code
 
 go 1.19
 
