@@ -15,19 +15,9 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.x509.oid import NameOID
-import os
 import datetime
-from dotenv import load_dotenv
-load_dotenv()
 
-COUNTRY_NAME=os.getenv('COUNTRY_NAME')
-STATE_OR_PROVINCE_NAME=os.getenv('STATE_OR_PROVINCE_NAME')
-LOCALITY_NAME=os.getenv('LOCALITY_NAME')
-ORGANIZATION_NAME=os.getenv('ORGANIZATION_NAME')
-COMMON_NAME=os.getenv('COMMON_NAME')
-DNS_NAME=os.getenv('DNS_NAME')
-
-def generate_self_signed_cert():
+def generate_self_signed_cert(COUNTRY_NAME, STATE_OR_PROVINCE_NAME, LOCALITY_NAME, ORGANIZATION_NAME, COMMON_NAME, DNS_NAME):
     # Generate a private key
     private_key = rsa.generate_private_key(
         public_exponent=65537,
@@ -73,5 +63,3 @@ def generate_self_signed_cert():
         f.write(cert.public_bytes(serialization.Encoding.PEM))
 
     print("Certificate and private key generated successfully.")
-
-generate_self_signed_cert()
