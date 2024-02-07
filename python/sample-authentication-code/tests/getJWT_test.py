@@ -1,3 +1,5 @@
+import sys
+sys.path.append('../')
 import unittest
 import jwt
 from getJWT import generate_digital_signature
