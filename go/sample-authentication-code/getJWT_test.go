@@ -1,4 +1,4 @@
-package digital_signature
+package sample_authentication_code
 
 import (
 	"fmt"
