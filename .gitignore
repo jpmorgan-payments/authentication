@@ -132,3 +132,4 @@ dist
 __pycache__
 launch.json
 target
+.pytest_cache

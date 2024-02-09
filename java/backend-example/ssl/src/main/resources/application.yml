@@ -1,0 +1,11 @@
+server:
+  port : 4242
+
+ssl:
+  keystore:
+    location: ${keystore_location}
+    password:  ${keystore_password}
+api:
+  globalPaymentsPath: /tsapi/v1/payments
+  cat:
+    url: https://apigatewaycat.jpmorgan.com
