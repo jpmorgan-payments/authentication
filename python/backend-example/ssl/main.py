@@ -57,7 +57,6 @@ class ApiProxy:
                     data = self.rfile.read(int(self.headers["content-length"])).decode('UTF-8')
                     # This can be removed if not requiring a digital signature
                     encoded_data = generate_digital_signature(digital_key, json.loads(data))
-                    resp = requests_func(final_url, data=encoded_data, headers=headers)
                     resp = requests_func(final_url, data=encoded_data, headers=headers, cert=(public_cert, private_cert))
 
                 else:
