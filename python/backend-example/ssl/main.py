@@ -1,7 +1,7 @@
 '''
-This code shows a basic backend example for sending requests to our servers using OAuth
+This code shows a basic backend example for sending requests to our servers using SSL
 For POST requests we have included gathering a JWT, this may not be required. 
-You will provide your CLIENT_ID, CLIENT_SECRET and ACCESS_TOKEN_URL.
+You will provide your PRIVATE, PUBLIC and DIGITAL cert.
 You can obtain these values following this guide: https://developer.payments.jpmorgan.com/quick-start
 '''
 import requests
@@ -13,16 +13,15 @@ from dotenv import load_dotenv
 
 import os
 sys.path.append('../../sample-authentication-code')
-from getAccessToken import get_access_token
 from getJWT import generate_digital_signature
 load_dotenv()
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 url = "https://api-mock.payments.jpmorgan.com"
-access_token_url=os.getenv('ACCESS_TOKEN_URL')
-client_id=os.getenv('CLIENT_ID')
-client_secret=os.getenv('CLIENT_SECRET')
-digital_key = os.getenv('DIGITAL_KEY')
+
+digital_key=os.getenv('DIGITAL_KEY')
+public_cert=os.getenv("PUBLIC")
+private_cert=os.getenv("PRIVATE")
 
 class ApiProxy:
     def start_server(self):
@@ -53,18 +52,16 @@ class ApiProxy:
                 final_url = url + self.path
                 print("Final URL:", final_url) 
                 headers = dict(self.headers)
-                # Gathering the access token
-                access_token = get_access_token(url=access_token_url, client_id=client_id, client_secret=client_secret);
-                headers["Authorization"] = "Bearer " + access_token 
 
                 if method == "post":
                     data = self.rfile.read(int(self.headers["content-length"])).decode('UTF-8')
                     # This can be removed if not requiring a digital signature
                     encoded_data = generate_digital_signature(digital_key, json.loads(data))
                     resp = requests_func(final_url, data=encoded_data, headers=headers)
+                    resp = requests_func(final_url, data=encoded_data, headers=headers, cert=(public_cert, private_cert))
 
                 else:
-                    resp = requests_func(final_url, headers=headers)
+                    resp = requests_func(final_url, headers=headers, cert=(public_cert, private_cert))
                 self.send_response(resp.status_code)
                 for key in resp.headers:
                     self.send_header(key, resp.headers[key])
