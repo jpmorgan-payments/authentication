@@ -3,6 +3,8 @@ This code shows a basic backend example for sending requests to our servers usin
 For POST requests we have included gathering a JWT, this may not be required. 
 You will provide your PRIVATE, PUBLIC and DIGITAL cert.
 You can obtain these values following this guide: https://developer.payments.jpmorgan.com/quick-start
+
+Note this is not production code and is supplied to get developers started 
 '''
 import requests
 import signal
