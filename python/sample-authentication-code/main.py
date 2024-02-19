@@ -14,7 +14,7 @@ You will also include your API url and payload for hitting your API.
 You can obtain these values following this guide: https://developer.payments.jpmorgan.com/quick-start
 '''
 
-access_token_url=os.getenv('CLIENT_SECRET')
+access_token_url=os.getenv('ACCESS_TOKEN_URL')
 api_url = ""
 client_id=os.getenv('CLIENT_ID')
 client_secret=os.getenv('CLIENT_SECRET')
