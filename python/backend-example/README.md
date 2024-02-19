@@ -1,4 +1,4 @@
-# NODE JS Backend Samples
+# Python Backend Samples
 
 In this folder there are two code samples for connecting to our APIs using node js.
 Each sample is categorised by the authentication method you will use.
@@ -7,7 +7,7 @@ Each sample is categorised by the authentication method you will use.
 
 ## Requirements
 
-- Node v18+
+- Python 3
 - Configured .env file
 
 ## How to run - OAuth
