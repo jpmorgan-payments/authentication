@@ -1,4 +1,4 @@
-package sample_authentication_code
+package samples
 
 import (
 	"encoding/json"
@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func getAccessToken(url, clientID, clientSecret string) (string, error) {
+func GetAccessToken(url, clientID, clientSecret string) (string, error) {
 	// Prepare request body
 	payload := strings.NewReader("grant_type=client_credentials&scope=jpm:payments:sandbox")
 

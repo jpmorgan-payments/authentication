@@ -1,4 +1,4 @@
-package sample_authentication_code
+package samples
 
 import (
 	"os"
@@ -7,7 +7,7 @@ import (
 
 func TestGenerateSelfSignedCert(t *testing.T) {
 	// Call the function with test certificate details
-	err := generateSelfSignedCert("US", "California", "San Francisco", "My Organization", "localhost", "localhost")
+	err := GenerateSelfSignedCert("US", "California", "San Francisco", "My Organization", "localhost", "localhost")
 	if err != nil {
 		t.Errorf("Error generating certificate: %v", err)
 	}
