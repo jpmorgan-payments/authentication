@@ -1,7 +1,6 @@
 import sys
 sys.path.append('../')
 import unittest
-import requests
 from requests.exceptions import RequestException
 from unittest.mock import patch, MagicMock
 from getAccessToken import get_access_token
