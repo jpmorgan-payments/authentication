@@ -17,7 +17,7 @@ class TestSendFirstRequest(unittest.TestCase):
             mock_post.assert_called_once_with(url, json=payload, headers={
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "Authorization": accessToken
+                "Authorization": "Bearer " + accessToken  
             })
             # Assert that the response matches the expected value
             self.assertEqual(response, {"status": "success"})
