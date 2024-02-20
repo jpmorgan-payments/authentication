@@ -1,4 +1,4 @@
-package sample_authentication_code
+package samples
 
 import (
 	"fmt"
