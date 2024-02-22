@@ -26,9 +26,11 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	access_token_url := "https://id.payments.jpmorgan.com/am/oauth2/alpha/access_token"
-	client_id := "3988f709-a8f9-47c3-9d28-c9fcc466d5c0"
-	client_secret := "y_OAgjpmVcEL1vpPDI9SXjIkdUYWBXpl8UIWHIVIlRW45zsl2q0EjfL_ffGkUDn02X2_RDZWe1buriJPrTwmeA"
+	// These details shouldn't be committed or shared privately. We recommend using an environment file or other secure storage.
+	access_token_url := ""
+	client_id := ""
+	client_secret := ""
+	// Uncomment the below line if using digital signature
 	//digital_key := ""
 	handler := func(p *httputil.ReverseProxy) func(http.ResponseWriter, *http.Request) {
 		return func(w http.ResponseWriter, r *http.Request) {
@@ -38,9 +40,10 @@ func main() {
 			accessToken, err := samples.GetAccessToken(access_token_url, client_id, client_secret)
 			if err != nil {
 				log.Printf("Error getting access token: %v", err)
+				panic(err)
 			}
 			w.Header().Set("Authorization", "Bearer "+accessToken)
-			// JWT/Digital Signature generation. This is required for some of our POST requests.
+			// JWT/Digital Signature generation. This is required for some of our POST requests. Uncomment this to use them
 			//modifyRequestBody(w, r, digital_key)
 
 			p.ServeHTTP(w, r)
