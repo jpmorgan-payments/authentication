@@ -10,7 +10,7 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 )
 
-func generate_digital_signature(digital_key string, body map[string]interface{}) string {
+func GenerateDigitalSignature(digital_key string, body map[string]interface{}) string {
 	token := jwt.NewWithClaims(jwt.SigningMethodRS256, jwt.MapClaims(body))
 	signKey, err := jwt.ParseRSAPrivateKeyFromPEM([]byte(digital_key))
 	if err != nil {
