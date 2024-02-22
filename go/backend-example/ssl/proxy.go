@@ -1,10 +1,10 @@
 package main
 
 /*
-This code is a simple example of how to run a backend server for OAuth connections.
+This code is a simple example of how to run a backend server for SSL connections.
 You can send your request to localhost:8001/<api_path>
-This code will receive the request, gather the OAuth token and then forward it to our servers.
-You will need to provide your ACCESS_TOKEN_URL, CLIENT_ID, CLIENT_SECRET
+This code will receive the request, add the certs and then forward it to our servers.
+You will provide your PRIVATE and PUBLIC.
 You can obtain these values following this guide: https://developer.payments.jpmorgan.com/quick-start
 If you are hitting our APIs that require a digital signature or JWT then uncomment line 40 and provide your key.
 Note this is not production code and is supplied to get developers started
@@ -12,6 +12,7 @@ Note this is not production code and is supplied to get developers started
 
 import (
 	"bytes"
+	"crypto/tls"
 	"encoding/json"
 	"io"
 	"log"
@@ -22,32 +23,47 @@ import (
 )
 
 func main() {
+	// Parse the remote URL
 	remote, err := url.Parse("https://api-mock.payments.jpmorgan.com")
 	if err != nil {
 		panic(err)
 	}
-	access_token_url := ""
-	client_id := ""
-	client_secret := ""
-	//digital_key := ""
+
+	// Load client certificate and key
+	cert, err := tls.LoadX509KeyPair("client.crt", "client.key")
+	if err != nil {
+		panic(err)
+	}
+
+	// Configure TLS with client certificate (skip CA certificate verification)
+	tlsConfig := &tls.Config{
+		Certificates:       []tls.Certificate{cert},
+		InsecureSkipVerify: true, // Skip CA certificate verification
+	}
+
+	// Create a HTTP client with custom TLS configuration
+	client := &http.Client{
+		Transport: &http.Transport{
+			TLSClientConfig: tlsConfig,
+		},
+	}
+
+	// Define the reverse proxy handler
 	handler := func(p *httputil.ReverseProxy) func(http.ResponseWriter, *http.Request) {
 		return func(w http.ResponseWriter, r *http.Request) {
 			log.Println(r.URL)
 			r.Host = remote.Host
-			// Access token generation. We are using the code from our sample authentication folder
-			accessToken, err := samples.GetAccessToken(access_token_url, client_id, client_secret)
-			if err != nil {
-				log.Printf("Error getting access token: %v", err)
-			}
-			w.Header().Set("Authorization", "Bearer "+accessToken)
-			// JWT/Digital Signature generation. This is required for some of our POST requests.
-			//modifyRequestBody(w, r, digital_key)
 
+			// Pass the request to the reverse proxy
 			p.ServeHTTP(w, r)
 		}
 	}
 
+	// Create a reverse proxy with the remote URL and custom HTTP client
 	proxy := httputil.NewSingleHostReverseProxy(remote)
+	proxy.Transport = client.Transport
+
+	// Register the handler and start the server
 	http.HandleFunc("/", handler(proxy))
 	err = http.ListenAndServe(":8001", nil)
 	if err != nil {
