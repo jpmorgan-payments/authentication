@@ -1,6 +1,6 @@
 # Go Backend Samples
 
-In this folder there are two code samples for connecting to our APIs using Go.
+There are two code samples in this folder for connecting to our APIs using Go.
 Each sample is categorised by the authentication method you will use.
 
 ** Note this is not production code and is supplied to get developers started **

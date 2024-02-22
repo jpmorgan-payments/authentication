@@ -53,7 +53,9 @@ func main() {
 		return func(w http.ResponseWriter, r *http.Request) {
 			log.Println(r.URL)
 			r.Host = remote.Host
-
+			
+			// JWT/Digital Signature generation. This is required for some of our POST requests.
+			//modifyRequestBody(w, r, digital_key)
 			// Pass the request to the reverse proxy
 			p.ServeHTTP(w, r)
 		}
