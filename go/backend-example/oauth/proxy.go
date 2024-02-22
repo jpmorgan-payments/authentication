@@ -4,15 +4,17 @@ package main
 This code is a simple example of how to run a backend server for OAuth connections.
 You can send your request to localhost:8001/<api_path>
 This code will receive the request, gather the OAuth token and then forward it to our servers.
-You will need to provide your ACCESS_TOKEN_URL, CLIENT_ID, CLIENT_SECRET
+You will need to provide your ACCESS_TOKEN_URL, CLIENT_ID, CLIENT_SECRET as command line arguments
+You can run with: 'go run . --url="enter url" --id="enter client id" --secret="secret"'
 You can obtain these values following this guide: https://developer.payments.jpmorgan.com/quick-start
-If you are hitting our APIs that require a digital signature or JWT then uncomment line 40 and provide your key.
+If you are hitting our APIs that require a digital signature or JWT then provide your key as a command line argument
 Note this is not production code and is supplied to get developers started
 */
 
 import (
 	"bytes"
 	"encoding/json"
+	"flag"
 	"io"
 	"log"
 	"net/http"
@@ -24,27 +26,29 @@ import (
 func main() {
 	remote, err := url.Parse("https://api-mock.payments.jpmorgan.com")
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
-	// These details shouldn't be committed or shared privately. We recommend using an environment file or other secure storage.
-	access_token_url := ""
-	client_id := ""
-	client_secret := ""
-	// Uncomment the below line if using digital signature
-	//digital_key := ""
+	access_token_url := flag.String("url", "access_token_url", "an access token url")
+	client_id := flag.String("id", "client_id", "client id")
+	client_secret := flag.String("secret", "client_secret", "client_secret")
+	// If digital key is defined we will encode the payload
+	digital_key := flag.String("key", "digital_key", "digital_key")
+	flag.Parse()
+
 	handler := func(p *httputil.ReverseProxy) func(http.ResponseWriter, *http.Request) {
 		return func(w http.ResponseWriter, r *http.Request) {
 			log.Println(r.URL)
 			r.Host = remote.Host
 			// Access token generation. We are using the code from our sample authentication folder
-			accessToken, err := samples.GetAccessToken(access_token_url, client_id, client_secret)
+			accessToken, err := samples.GetAccessToken(*access_token_url, *client_id, *client_secret)
 			if err != nil {
-				log.Printf("Error getting access token: %v", err)
-				panic(err)
+				log.Fatalf("Error getting access token: %v", err)
 			}
 			w.Header().Set("Authorization", "Bearer "+accessToken)
-			// JWT/Digital Signature generation. This is required for some of our POST requests. Uncomment this to use them
-			//modifyRequestBody(w, r, digital_key)
+			// JWT/Digital Signature generation. This is required for some of our POST requests.
+			if len(*digital_key) != 0 {
+				modifyRequestBody(w, r, *digital_key)
+			}
 
 			p.ServeHTTP(w, r)
 		}
@@ -54,7 +58,7 @@ func main() {
 	http.HandleFunc("/", handler(proxy))
 	err = http.ListenAndServe(":8001", nil)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 }
 

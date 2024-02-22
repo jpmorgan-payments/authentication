@@ -4,9 +4,10 @@ package main
 This code is a simple example of how to run a backend server for SSL connections.
 You can send your request to localhost:8001/<api_path>
 This code will receive the request, add the certs and then forward it to our servers.
-You will provide your PRIVATE and PUBLIC.
+You will provide your PRIVATE and PUBLIC file paths.
 You can obtain these values following this guide: https://developer.payments.jpmorgan.com/quick-start
-If you are hitting our APIs that require a digital signature or JWT then uncomment line 40 and provide your key.
+If you are hitting our APIs that require a digital signature or JWT then provide your key as a command line value.E.g:
+You can run with: 'go run . -key="your key here'
 Note this is not production code and is supplied to get developers started
 */
 
@@ -14,6 +15,7 @@ import (
 	"bytes"
 	"crypto/tls"
 	"encoding/json"
+	"flag"
 	"io"
 	"log"
 	"net/http"
@@ -26,13 +28,16 @@ func main() {
 	// Parse the remote URL
 	remote, err := url.Parse("https://api-mock.payments.jpmorgan.com")
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
+	// If digital key is defined we will encode the payload
+	digital_key := flag.String("key", "digital_key", "digital_key")
+	flag.Parse()
 
 	// Load client certificate and key
 	cert, err := tls.LoadX509KeyPair("client.crt", "client.key")
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 
 	// Configure TLS with client certificate (skip CA certificate verification)
@@ -53,10 +58,9 @@ func main() {
 		return func(w http.ResponseWriter, r *http.Request) {
 			log.Println(r.URL)
 			r.Host = remote.Host
-			
+
 			// JWT/Digital Signature generation. This is required for some of our POST requests.
-			//modifyRequestBody(w, r, digital_key)
-			// Pass the request to the reverse proxy
+			modifyRequestBody(w, r, *digital_key)
 			p.ServeHTTP(w, r)
 		}
 	}
@@ -69,7 +73,7 @@ func main() {
 	http.HandleFunc("/", handler(proxy))
 	err = http.ListenAndServe(":8001", nil)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 }
 
