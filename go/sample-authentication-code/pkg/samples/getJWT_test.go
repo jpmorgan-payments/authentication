@@ -18,7 +18,7 @@ func setupSuite(t testing.TB) string {
 func TestDigSignGenerated(t *testing.T) {
 	privateKey := strings.ReplaceAll(setupSuite(t), "\\n", "\n")
 
-	result := generate_digital_signature(privateKey, map[string]interface{}{"foo": "bar"})
+	result := GenerateDigitalSignature(privateKey, map[string]interface{}{"foo": "bar"})
 	// Verify that the token can be parsed and verified
 	token, err := jwt.Parse(result, func(token *jwt.Token) (interface{}, error) {
 		// Verify that the signing method is RS256
