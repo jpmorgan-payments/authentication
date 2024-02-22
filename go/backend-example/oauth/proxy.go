@@ -26,9 +26,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	access_token_url := ""
-	client_id := ""
-	client_secret := ""
+	access_token_url := "https://id.payments.jpmorgan.com/am/oauth2/alpha/access_token"
+	client_id := "3988f709-a8f9-47c3-9d28-c9fcc466d5c0"
+	client_secret := "y_OAgjpmVcEL1vpPDI9SXjIkdUYWBXpl8UIWHIVIlRW45zsl2q0EjfL_ffGkUDn02X2_RDZWe1buriJPrTwmeA"
 	//digital_key := ""
 	handler := func(p *httputil.ReverseProxy) func(http.ResponseWriter, *http.Request) {
 		return func(w http.ResponseWriter, r *http.Request) {

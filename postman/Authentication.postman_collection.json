@@ -534,6 +534,50 @@
 				}
 			],
 			"description": "In this collection, we demonstrate the process of obtaining an access token to access our APIs. Additionally, we've provided sample requests for utilizing our APIs. Upon executing the 'getAccessToken' request, the token will be stored in a collection variable for use in subsequent requests.\n\nFor information on obtaining the CLIENT_ID and CLIENT_SECRET necessary for generating the access token, please refer to the following link: [https://developer.payments.jpmorgan.com/quick-start](https://developer.payments.jpmorgan.com/quick-start)"
+		},
+		{
+			"name": "Backend-examples",
+			"item": [
+				{
+					"name": "Basic Post Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"payments\": {\n    \"possibleDuplicateMessage\": false,\n    \"paymentIdentifiers\": {\n      \"endToEndId\": \"AD202109311354152\"\n    },\n    \"requestedExecutionDate\": \"2023-04-22\",\n    \"transferType\": \"CREDIT\",\n    \"paymentCurrency\": \"GBP\",\n    \"paymentAmount\": 650,\n    \"paymentType\": \"RTP\",\n    \"debtor\": {\n      \"debtorAccount\": {\n        \"accountId\": \"12311871\",\n        \"accountCurrency\": \"GBP\",\n        \"accountType\": \"DDA\"\n      },\n      \"ultimateDebtor\": {\n        \"ultimateDebtorName\": \"Wayne Thompson\",\n        \"postalAddress\": {\n          \"addressType\": \"ADDR\",\n          \"streetName\": \"Lennon Road\",\n          \"buildingNumber\": \"22\",\n          \"townName\": \"Liverpool\",\n          \"country\": \"GB\"\n        },\n        \"countryOfResidence\": \"GB\",\n        \"organizationId\": {\n          \"bic\": \"CHASGB2L\",\n          \"id\": \"40025916\"\n        }\n      }\n    },\n    \"debtorAgent\": {\n      \"financialInstitutionId\": {\n        \"bic\": \"CHASGB2L\"\n      }\n    },\n    \"creditorAgent\": {\n      \"financialInstitutionId\": {\n        \"clearingSystemId\": {\n          \"id\": \"185008\"\n        }\n      }\n    },\n    \"creditor\": {\n      \"creditorName\": \"David Burn\",\n      \"postalAddress\": {\n        \"addressType\": \"ADDR\",\n        \"streetName\": \"Fratton Park\",\n        \"buildingNumber\": \"411\",\n        \"postalCode\": \"PO48RA\",\n        \"townName\": \"Portsmouth\",\n        \"country\": \"GB\",\n        \"countrySubDvsn\": \"Hampshire\"\n      },\n      \"countryOfResidence\": \"GB\",\n      \"creditorAccount\": {\n        \"accountId\": \"87654321\"\n      },\n      \"ultimateCreditor\": {\n        \"ultimateCreditorName\": \"Clint Hall\",\n        \"individualId\": {\n          \"id\": \"87654321\"\n        },\n        \"postalAddress\": {\n          \"addressType\": \"ADDR\",\n          \"streetName\": \"Fratton Park\",\n          \"buildingNumber\": \"411\",\n          \"postalCode\": \"PO48RA\",\n          \"townName\": \"Portsmouth\",\n          \"country\": \"GB\",\n          \"countrySubDvsn\": \"Hampshire\"\n        }\n      }\n    },\n    \"purpose\": {\n      \"code\": \"GDDS\",\n      \"type\": \"CODE\"\n    },\n    \"remittanceInformation\": {\n      \"unstructuredInformation\": [\n        \"Payment for Macbook batteries Receipt #AXF23-LGG\"\n      ]\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/tsapi/v1/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"tsapi",
+								"v1",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Basic Get Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"description": "This folder includes basic requests for testing out our backend examples code."
 		}
 	],
 	"variable": [
