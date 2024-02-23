@@ -15,13 +15,14 @@ You can obtain these values following this guide: https://developer.payments.jpm
 '''
 
 access_token_url=os.getenv('ACCESS_TOKEN_URL')
-api_url = ""
 client_id=os.getenv('CLIENT_ID')
 client_secret=os.getenv('CLIENT_SECRET')
 payload = {}
+api_url = ""
 
 def main():
     access_token = get_access_token(url=access_token_url, client_id=client_id, client_secret=client_secret);
+    print('Gathered access token')
     response = send_first_request(payload=payload, url=api_url, accessToken=access_token)
     print(response)
 
