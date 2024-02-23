@@ -1,5 +1,9 @@
 import requests
 
+'''
+This snippet is used to send a request to our servers. 
+Combine it with our getAccessToken to get started
+'''
 
 def send_first_request(payload, url, accessToken):
     headers = {
