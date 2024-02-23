@@ -1,4 +1,4 @@
-package sample_authentication_code
+package samples
 
 import (
 	"net/http"
@@ -17,7 +17,7 @@ func TestGetAccessToken(t *testing.T) {
 	defer mockServer.Close()
 
 	// Call the function with the URL of the mock server
-	accessToken, err := getAccessToken(mockServer.URL+"/token", "client_id", "client_secret")
+	accessToken, err := GetAccessToken(mockServer.URL+"/token", "client_id", "client_secret")
 	if err != nil {
 		t.Errorf("Error getting access token: %v", err)
 	}

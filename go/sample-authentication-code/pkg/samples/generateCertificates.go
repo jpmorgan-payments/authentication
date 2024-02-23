@@ -1,4 +1,4 @@
-package sample_authentication_code
+package samples
 
 /*
 * This utility script is used to create a certificate request (CSR) along with a self-signed X509 certificate (CRT) using
@@ -22,7 +22,7 @@ import (
 	"time"
 )
 
-func generateSelfSignedCert(countryName, stateOrProvinceName, localityName, organizationName, commonName, dnsName string) error {
+func GenerateSelfSignedCert(countryName, stateOrProvinceName, localityName, organizationName, commonName, dnsName string) error {
 	// Generate a private key
 	privateKey, err := rsa.GenerateKey(rand.Reader, 2048)
 	if err != nil {
