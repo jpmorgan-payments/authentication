@@ -1,11 +1,11 @@
 repository_name,site,views,unique_visitors/cloners
 digital-signature,Google,100,6
 digital-signature,statics.teams.cdn.office.net,1,1
+digital-signature,github.com,101,10
 digital-signature,mail.google.com,16,1
-digital-signature,github.com,99,10
 digital-signature,developer.payments.jpmorgan.com,6,2
 digital-signature,jpmchase.secure.virtru.com,55,2
 digital-signature,online-payments-dev.com,2,1
-digital-signature,teams.microsoft.com,1,1
 digital-signature,com.google.android.gm,11,1
+digital-signature,teams.microsoft.com,1,1
 digital-signature,excel.officeapps.live.com,6,1
