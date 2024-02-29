@@ -33,7 +33,8 @@ public class JwtUtility {
     public static String getClientJwtAssertion(Certificate certificate, PrivateKey privateKey) {
         try {
             Date now = new Date();
-            SignedJWT signedJWT = new SignedJWT((new JWSHeader.Builder(JWSAlgorithm.RS256)).keyID(getThumbprint(certificate)).build(),
+            SignedJWT signedJWT = new SignedJWT(
+                    (new JWSHeader.Builder(JWSAlgorithm.RS256)).keyID(getThumbprint(certificate)).build(),
                     (new com.nimbusds.jwt.JWTClaimsSet.Builder())
                             .jwtID(UUID.randomUUID().toString())
                             .subject(Constants.CLIENT_ID)
@@ -56,7 +57,8 @@ public class JwtUtility {
         try {
             return Hashing.sha1().hashBytes(certificate.getEncoded()).toString().toUpperCase();
         } catch (CertificateEncodingException e) {
-            throw new RuntimeException("Error getting certificate thumbprint", e);
+            e.printStackTrace();
         }
+        return null;
     }
 }

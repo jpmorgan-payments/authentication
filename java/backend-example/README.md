@@ -1,6 +1,6 @@
 # Java Backend Samples
 
-In this folder there are two code samples for connecting to our APIs using node js.
+In this folder there are two code samples for connecting to our APIs using Java.
 Each sample is categorised by the authentication method you will use.
 
 ** Note this is not production code and is supplied to get developers started **
