@@ -3,11 +3,14 @@ package com.jpmorgan.payments.sample;
 import jakarta.servlet.http.HttpServletRequest;
 import org.json.JSONObject;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.jpmorgan.payments.sample.DigitalSignatureGenerator;
 
 import java.io.IOException;
 import java.net.URI;
@@ -34,6 +37,9 @@ public class PaymentsController {
 
     @Value("${CLIENT_SECRET}")
     private String CLIENT_SECRET;
+
+    @Autowired
+    private DigitalSignatureGenerator digitalSignatureGenerator;
 
     // Write a reverse proxy that forwards requests to the J.P. Morgan API
     // and returns the response to the client.
@@ -65,18 +71,23 @@ public class PaymentsController {
                 .header("Authorization", "Bearer " + getAccessToken());
         HttpRequest newRequest = switch (method) {
             case "GET" -> requestBuilder.GET().build();
-            case "POST" -> requestBuilder.POST(HttpRequest.BodyPublishers.ofString(body)).build();
+            case "POST" ->
+                requestBuilder.POST(HttpRequest.BodyPublishers.ofString(handlePostBodyEncoding(body))).build();
             case "PUT" -> requestBuilder.PUT(HttpRequest.BodyPublishers.ofString(body)).build();
             case "DELETE" -> requestBuilder.DELETE().build();
             default -> throw new IllegalArgumentException("Unsupported request method: " + method);
         };
         HttpResponse<String> response = HttpClient.newHttpClient().send(newRequest,
                 HttpResponse.BodyHandlers.ofString());
-        System.out.println("Request: " + newRequest);
-        System.out.println("Response: " + response);
         return ResponseEntity.status(response.statusCode()).body(response.body());
     }
 
+    private String handlePostBodyEncoding(String body) {
+        return digitalSignatureGenerator.createJWT(body);
+    }
+
+    // Write a method that uses the OAuth 2.0 client credentials flow to
+    // authenticate with the J.P. Morgan API and returns the access token.§
     public String getAccessToken() {
         Map<String, String> parameters = new HashMap<>();
         parameters.put("grant_type", "client_credentials");
