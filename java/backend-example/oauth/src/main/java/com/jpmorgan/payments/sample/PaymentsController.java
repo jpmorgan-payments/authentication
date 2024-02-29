@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 @RestController
 public class PaymentsController {
 
-    static final String API_URL = "https://api-mock.payments.jpmorgan.com";
+    private static final String API_URL = "https://api-mock.payments.jpmorgan.com";
 
     @Value("${ACCESS_TOKEN_URL}")
     private String ACCESS_TOKEN_URL;
@@ -41,15 +41,25 @@ public class PaymentsController {
     @Autowired
     private DigitalSignatureGenerator digitalSignatureGenerator;
 
-    // Write a reverse proxy that forwards requests to the J.P. Morgan API
-    // and returns the response to the client.
-    // The reverse proxy should use the OAuth 2.0 client credentials flow to
-    // authenticate with the J.P. Morgan API.
-    // The reverse proxy should be able to handle multiple concurrent requests.
-    // The reverse proxy should log the request and response payloads to the
-    // console.
-    // The reverse proxy should return a 502 Bad Gateway if the J.P. Morgan API is
-    // unavailable.
+    private final HttpClient httpClient;
+
+    @Autowired
+    public PaymentsController(HttpClient httpClient) {
+        this.httpClient = httpClient;
+    }
+
+    /**
+     * A reverse proxy that forwards requests to the J.P. Morgan API and returns the
+     * response to the client.
+     * The reverse proxy should use the OAuth 2.0 client credentials flow to
+     * authenticate with the J.P. Morgan API.
+     * The reverse proxy should be able to handle multiple concurrent requests.
+     * The reverse proxy should log the request and response payloads to the
+     * console.
+     * The reverse proxy should return a 502 Bad Gateway if the J.P. Morgan API is
+     * unavailable.
+     */
+
     @RequestMapping(value = "/**")
     public ResponseEntity<String> proxyRequest(@RequestBody(required = false) String body,
             @RequestHeader Map<String, String> headers,
@@ -77,7 +87,7 @@ public class PaymentsController {
             case "DELETE" -> requestBuilder.DELETE().build();
             default -> throw new IllegalArgumentException("Unsupported request method: " + method);
         };
-        HttpResponse<String> response = HttpClient.newHttpClient().send(newRequest,
+        HttpResponse<String> response = httpClient.send(newRequest,
                 HttpResponse.BodyHandlers.ofString());
         return ResponseEntity.status(response.statusCode()).body(response.body());
     }
@@ -86,9 +96,12 @@ public class PaymentsController {
         return digitalSignatureGenerator.createJWT(body);
     }
 
-    // Write a method that uses the OAuth 2.0 client credentials flow to
-    // authenticate with the J.P. Morgan API and returns the access token.§
-    public String getAccessToken() {
+    /**
+     * A method that uses the OAuth 2.0 client credentials flow to
+     * authenticate with the J.P. Morgan API and returns the access token.§
+     */
+
+    private String getAccessToken() {
         Map<String, String> parameters = new HashMap<>();
         parameters.put("grant_type", "client_credentials");
         parameters.put("client_id", CLIENT_ID);
@@ -98,19 +111,17 @@ public class PaymentsController {
                 .map(key -> key + "=" + URLEncoder.encode(parameters.get(key), StandardCharsets.UTF_8))
                 .collect(Collectors.joining("&"));
 
-        HttpClient client = HttpClient.newHttpClient();
-
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(ACCESS_TOKEN_URL))
                 .headers("Content-Type", "application/x-www-form-urlencoded")
                 .POST(HttpRequest.BodyPublishers.ofString(form)).build();
 
         HttpResponse<?> response = null;
         try {
-            response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         JSONObject obj = new JSONObject(response.body().toString());
         String accessToken = obj.getString("access_token");

@@ -21,6 +21,7 @@ public class DigitalSignatureGenerator
 
 {
     String privateKeyFilename = "./src/main/resources/static/private.key";
+
     private static String formatKeyString(String key) {
         return key.replace("-----BEGIN PRIVATE KEY-----", "").replace("-----END PRIVATE KEY-----", "")
                 .replace("\\n", "").replaceAll("\\s+", "");
@@ -46,19 +47,19 @@ public class DigitalSignatureGenerator
         return prvKey;
     }
 
-    private byte[] readCertFile (String filename){
+    private byte[] readCertFile(String filename) {
         try {
             String key = Files.readString(Paths.get(filename));
             return DatatypeConverter.parseBase64Binary(formatKeyString(key));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
-    private JSONObject formatPaymentAmountField (String payload){
+    private JSONObject formatPaymentAmountField(String payload) {
         final JSONObject payloadObj = new JSONObject(payload);
         JSONObject payments = payloadObj.getJSONObject("payments");
-        String amount  = payments.getString("paymentAmount");
+        String amount = payments.getString("paymentAmount");
         payments.put("paymentAmount", Double.parseDouble(amount));
         payloadObj.put("payments", payments);
         return payloadObj;
