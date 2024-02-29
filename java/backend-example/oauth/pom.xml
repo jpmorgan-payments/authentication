@@ -12,9 +12,9 @@
 	<artifactId>sample</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sample</name>
-	<description>Sample project for Global Payments</description>
+	<description>Sample project for OAuth connections</description>
 	<properties>
-		<java.version>20</java.version>
+		<java.version>21</java.version>
 	</properties>
 	<dependencies>
 		<dependency>

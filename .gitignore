@@ -133,3 +133,7 @@ __pycache__
 launch.json
 target
 .pytest_cache
+
+
+application-local.yml
+.idea
