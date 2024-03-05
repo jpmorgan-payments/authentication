@@ -11,7 +11,7 @@ Each folder contains:
 
 ### Generating test certificates
 
-You can follow the below commands to get setup with some testing certificates. To use these against J.P. Morgan APIs you will need to onboard them on [developer.jpmorgan.com](developer.jpmorgan.com)
+You can follow the below commands to get setup with some testing certificates. To use these against J.P. Morgan APIs you will need to onboard them on [developer.jpmorgan.com](https://developer.jpmorgan.com)
 
 ```bash
 openssl genrsa -out keypair.pem 2048
