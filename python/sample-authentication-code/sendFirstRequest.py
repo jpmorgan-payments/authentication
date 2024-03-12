@@ -5,12 +5,12 @@ This snippet is used to send a request to our servers.
 Combine it with our getAccessToken to get started
 '''
 
-def send_first_request(payload, url, accessToken):
+def send_first_request(url, access_token):
     headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "Authorization": "Bearer " + accessToken    
+    "Authorization": "Bearer " + access_token    
     }
-    response = requests.post(url, json=payload, headers=headers)
+    response = requests.get(url, headers=headers)
     return response.json()
 
