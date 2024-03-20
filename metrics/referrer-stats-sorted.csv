@@ -1,12 +1,12 @@
 repository_name,site,views,unique_visitors/cloners
 digital-signature,Bing,145,1
-digital-signature,Google,78,5
+digital-signature,Google,80,5
 digital-signature,com.google.android.gm,11,1
-digital-signature,developer.payments.jpmorgan.com,68,2
+digital-signature,developer.payments.jpmorgan.com,59,1
 digital-signature,excel.officeapps.live.com,6,1
 digital-signature,gateway.zscalertwo.net,12,1
-digital-signature,github.com,276,6
-digital-signature,jpmchase.secure.virtru.com,117,3
+digital-signature,github.com,338,7
+digital-signature,jpmchase.secure.virtru.com,2,1
 digital-signature,mail.google.com,16,1
 digital-signature,online-payments-dev.com,3,1
 digital-signature,statics.teams.cdn.office.net,33,1
