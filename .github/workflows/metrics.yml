@@ -33,7 +33,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install github_traffic_stats
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          gts maria-mcparland:$ACCESS_TOKEN 'digital-signature' 'save_csv' -o jpmorgan-payments
+          gts maria-mcparland:$ACCESS_TOKEN 'authentication' 'save_csv' -o jpmorgan-payments
           ls
       - name: Run merge script
         run: |
