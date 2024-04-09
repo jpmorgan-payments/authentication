@@ -1,12 +1,12 @@
 repository_name,site,views,unique_visitors/cloners
 authentication,Bing,1,1
-authentication,Google,40,2
+authentication,Google,1,1
 authentication,blog.test.aws.jpmchase.net,12,1
 authentication,com.google.android.gm,11,1
-authentication,developer.payments.jpmorgan.com,9,2
+authentication,developer.payments.jpmorgan.com,1,1
 authentication,excel.officeapps.live.com,6,1
 authentication,gateway.zscalertwo.net,12,1
-authentication,github.com,203,11
+authentication,github.com,174,6
 authentication,jira.expedia.biz,9,1
 authentication,jpmchase.secure.virtru.com,2,1
 authentication,mail.google.com,16,1
