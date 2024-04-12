@@ -6,9 +6,9 @@ authentication,com.google.android.gm,11,1
 authentication,developer.payments.jpmorgan.com,1,1
 authentication,excel.officeapps.live.com,6,1
 authentication,gateway.zscalertwo.net,12,1
-authentication,github.com,53,5
+authentication,github.com,33,5
 authentication,jira.expedia.biz,9,1
-authentication,jpmchase.secure.virtru.com,2,1
+authentication,jpmchase.secure.virtru.com,7,1
 authentication,mail.google.com,16,1
 authentication,online-payments-dev.com,3,1
 authentication,statics.teams.cdn.office.net,33,1
