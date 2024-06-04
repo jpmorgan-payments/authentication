@@ -12,7 +12,7 @@ The following values need to be updated in Constants.java:
 
 ## How To Run
 Requirements:
-* JDK 11 or newer
+* JDK 1.7 or newer
 * Maven
 
 ### Run in IDE
