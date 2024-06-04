@@ -2,17 +2,21 @@ package com.authentication.example;
 
 import com.authentication.example.utilities.IdAnywhereUtility;
 import com.authentication.example.utilities.JwtUtility;
-import com.nimbusds.jose.shaded.json.JSONObject;
+import com.fasterxml.jackson.databind.JsonNode;
+import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.security.spec.PKCS8EncodedKeySpec;
-import java.util.Base64;
 
 /*
  **************************************************************************
@@ -43,14 +47,15 @@ public class TokenGeneratorApplication {
 
 		// Create PrivateKey from provided key file
 		LOG.info("Private key file path: {}", Constants.PRIVATE_KEY_FILE_PATH);
-		try(FileInputStream privateKeyFile = new FileInputStream(Constants.PRIVATE_KEY_FILE_PATH)) {
-			String key = new String(privateKeyFile.readAllBytes());
+		try {
+			Path privateKeyPath = Paths.get(Constants.PRIVATE_KEY_FILE_PATH);
+			String key = new String(Files.readAllBytes(privateKeyPath));
 			String privateKeyPEM = key
 					.replace("\n", "")
 					.replace("\r", "")
 					.replaceAll("-+BEGIN([A-Za-z\\s]+)KEY-+", "")
 					.replaceAll("-+END([A-Za-z\\s]+)KEY-+", "");
-			byte[] decoded = Base64.getDecoder().decode(privateKeyPEM);
+			byte[] decoded = Base64.decodeBase64(privateKeyPEM);
 			KeyFactory keyFactory = KeyFactory.getInstance("RSA");
 			PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(decoded);
 			rsaKey = keyFactory.generatePrivate(keySpec);
@@ -60,7 +65,7 @@ public class TokenGeneratorApplication {
 			return;
 		}
 
-		JSONObject idAnywhereResponse;
+		JsonNode idAnywhereResponse;
 		// Retrieve access token from IDAnywhere
 		try {
 			LOG.info("Attempting to retrieve access token from IDAnywhere");
@@ -70,9 +75,13 @@ public class TokenGeneratorApplication {
 			return;
 		}
 
-		LOG.info("Access Token: {}", idAnywhereResponse.get("access_token"));
-		LOG.info("Expires In: {}", idAnywhereResponse.get("expires_in"));
-		LOG.info("Token Type: {}", idAnywhereResponse.get("token_type"));
+		try {
+			LOG.info("Access Token: {}", idAnywhereResponse.get("access_token").asText());
+			LOG.info("Expires In: {}", idAnywhereResponse.get("expires_in").asText());
+			LOG.info("Token Type: {}", idAnywhereResponse.get("token_type").asText());
+		} catch (Exception e) {
+			LOG.error("Error while extracting IDA response: {}", idAnywhereResponse);
+		}
 	}
 
 }
