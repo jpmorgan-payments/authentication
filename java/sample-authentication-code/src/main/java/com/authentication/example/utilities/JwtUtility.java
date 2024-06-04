@@ -6,7 +6,9 @@ import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.JWSAlgorithm;
 import com.nimbusds.jose.JWSHeader;
 import com.nimbusds.jose.JWSSigner;
+import com.nimbusds.jose.JWSSignerOption;
 import com.nimbusds.jose.crypto.RSASSASigner;
+import com.nimbusds.jose.crypto.opts.AllowWeakRSAKey;
 import com.nimbusds.jwt.SignedJWT;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +16,9 @@ import org.slf4j.LoggerFactory;
 import java.security.PrivateKey;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateEncodingException;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Set;
 import java.util.UUID;
 
 /*
@@ -39,8 +43,8 @@ public class JwtUtility {
                             .issueTime(new Date())
                             .expirationTime(new Date(now.getTime() + Constants.EXPIRES_IN))
                             .build());
-
-            JWSSigner rsaSigner = new RSASSASigner(privateKey);
+            Set<JWSSignerOption> options = Collections.singleton(AllowWeakRSAKey.getInstance());
+            JWSSigner rsaSigner = new RSASSASigner(privateKey, options);
             signedJWT.sign(rsaSigner);
             return signedJWT.serialize();
         } catch (JOSEException e) {
