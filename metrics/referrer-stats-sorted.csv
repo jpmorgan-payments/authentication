@@ -1,14 +1,14 @@
 repository_name,site,views,unique_visitors/cloners
 authentication,Bing,30,1
-authentication,Google,31,2
+authentication,Google,124,4
 authentication,blog.gaiacloud.jpmchase.net,3,1
 authentication,blog.prod.aws.jpmchase.net,1,1
 authentication,blog.test.aws.jpmchase.net,30,2
 authentication,com.google.android.gm,11,1
-authentication,developer.payments.jpmorgan.com,40,3
+authentication,developer.payments.jpmorgan.com,41,4
 authentication,excel.officeapps.live.com,6,1
 authentication,gateway.zscalertwo.net,12,1
-authentication,github.com,31,7
+authentication,github.com,36,8
 authentication,jira.expedia.biz,1,1
 authentication,jpmchase.secure.virtru.com,13,1
 authentication,mail.google.com,16,1
