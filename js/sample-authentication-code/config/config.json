@@ -1,6 +1,6 @@
 {
   "client_id": "<Enter data>",
-  "certPath": "./config/<Enter filename>.cer",
+  "certPath": "./config/<Enter filename>.pem",
   "jti": "12345",
   "privateKey": "./config/<Enter filename>.key",
   "audience": "https://idag2.jpmorganchase.com/adfs/oauth2/token",
