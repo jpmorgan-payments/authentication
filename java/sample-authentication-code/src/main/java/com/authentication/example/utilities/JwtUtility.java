@@ -1,7 +1,6 @@
 package com.authentication.example.utilities;
 
 import com.authentication.example.Constants;
-import com.google.common.hash.Hashing;
 import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.JWSAlgorithm;
 import com.nimbusds.jose.JWSHeader;
@@ -10,6 +9,7 @@ import com.nimbusds.jose.JWSSignerOption;
 import com.nimbusds.jose.crypto.RSASSASigner;
 import com.nimbusds.jose.crypto.opts.AllowWeakRSAKey;
 import com.nimbusds.jwt.SignedJWT;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -55,9 +55,9 @@ public class JwtUtility {
 
     private static String getThumbprint(Certificate certificate) {
         try {
-            return Hashing.sha1().hashBytes(certificate.getEncoded()).toString().toUpperCase();
+            return DigestUtils.sha1Hex(certificate.getEncoded()).toUpperCase();
         } catch (CertificateEncodingException e) {
-            e.printStackTrace();
+            LOG.error("Error getting certificate thumbprint", e);
         }
         return null;
     }

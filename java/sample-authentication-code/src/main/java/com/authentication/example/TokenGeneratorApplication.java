@@ -2,7 +2,7 @@ package com.authentication.example;
 
 import com.authentication.example.utilities.IdAnywhereUtility;
 import com.authentication.example.utilities.JwtUtility;
-import com.nimbusds.jose.shaded.json.JSONObject;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,8 +24,6 @@ public class TokenGeneratorApplication {
 	private static final Logger LOG = LoggerFactory.getLogger("TokenGeneratorApplication");
 
 	public static void main(String[] args) {
-
-		java.security.Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
 
 		X509Certificate x509Certificate;
 		PrivateKey rsaKey;
@@ -60,7 +58,7 @@ public class TokenGeneratorApplication {
 			return;
 		}
 
-		JSONObject idAnywhereResponse;
+		JsonNode idAnywhereResponse;
 		// Retrieve access token from IDAnywhere
 		try {
 			LOG.info("Attempting to retrieve access token from IDAnywhere");
@@ -70,9 +68,13 @@ public class TokenGeneratorApplication {
 			return;
 		}
 
-		LOG.info("Access Token: {}", idAnywhereResponse.get("access_token"));
-		LOG.info("Expires In: {}", idAnywhereResponse.get("expires_in"));
-		LOG.info("Token Type: {}", idAnywhereResponse.get("token_type"));
+		try {
+			LOG.info("Access Token: {}", idAnywhereResponse.get("access_token").asText());
+			LOG.info("Expires In: {}", idAnywhereResponse.get("expires_in").asLong());
+			LOG.info("Token Type: {}", idAnywhereResponse.get("token_type").asText());
+		} catch (Exception e) {
+			LOG.error("Error while extracting IDA response: {}", idAnywhereResponse);
+		}
 	}
 
 }

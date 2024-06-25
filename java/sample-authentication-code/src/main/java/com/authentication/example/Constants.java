@@ -12,7 +12,7 @@ public class Constants {
     // Provide certificate and client details
     public static final String CLIENT_ID = "CC-000000-A000000-000000-PROD";
 
-    public static final String RESOURCE = "JPMC:URI:RS-105239-85485-HelixAPIEntitlements-PROD";
+    public static final String RESOURCE = "JPMC:URI:RS-000000-00000-Resource-PROD";
 
     public static final String CERTIFICATE_FILE_PATH = "C:/certificate.crt";
 
