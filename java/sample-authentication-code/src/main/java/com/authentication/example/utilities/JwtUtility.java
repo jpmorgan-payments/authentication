@@ -57,8 +57,7 @@ public class JwtUtility {
         try {
             return DigestUtils.sha1Hex(certificate.getEncoded()).toUpperCase();
         } catch (CertificateEncodingException e) {
-            LOG.error("Error getting certificate thumbprint", e);
+            throw new RuntimeException("Error getting certificate thumbprint", e);
         }
-        return null;
     }
 }
