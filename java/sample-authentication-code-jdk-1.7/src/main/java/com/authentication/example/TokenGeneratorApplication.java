@@ -11,7 +11,6 @@ import java.io.FileInputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.cert.CertificateFactory;
@@ -28,8 +27,6 @@ public class TokenGeneratorApplication {
 	private static final Logger LOG = LoggerFactory.getLogger("TokenGeneratorApplication");
 
 	public static void main(String[] args) {
-
-		java.security.Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
 
 		X509Certificate x509Certificate;
 		PrivateKey rsaKey;
@@ -77,7 +74,7 @@ public class TokenGeneratorApplication {
 
 		try {
 			LOG.info("Access Token: {}", idAnywhereResponse.get("access_token").asText());
-			LOG.info("Expires In: {}", idAnywhereResponse.get("expires_in").asText());
+			LOG.info("Expires In: {}", idAnywhereResponse.get("expires_in").asLong());
 			LOG.info("Token Type: {}", idAnywhereResponse.get("token_type").asText());
 		} catch (Exception e) {
 			LOG.error("Error while extracting IDA response: {}", idAnywhereResponse);
