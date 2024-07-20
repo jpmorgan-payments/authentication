@@ -12,10 +12,10 @@ authentication,excel.officeapps.live.com,6,1
 authentication,gateway.zscalertwo.net,12,1
 authentication,github.com,63,6
 authentication,jira.expedia.biz,1,1
-authentication,jpmchase.secure.virtru.com,19,3
+authentication,jpmchase.secure.virtru.com,35,4
 authentication,mail.google.com,16,1
 authentication,online-payments-dev.com,1,1
-authentication,payments-preview.prod.aws.jpmchase.net,2,2
+authentication,payments-preview.prod.aws.jpmchase.net,3,3
 authentication,statics.teams.cdn.office.net,4,1
 authentication,teams.microsoft.com,2,1
 authentication,theforage.com,6,1
