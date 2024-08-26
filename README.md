@@ -1,17 +1,31 @@
-# J.P. Morgan Authentication examples
+# Generate a Digital Signature for hitting payments APIs
 
-Within this repository you can find example code for accessing our Payments APIs.
-We have split the code by programming language for ease of use.
-Each folder contains:
+When accessing our Payments API we require a Digital Signature (also known as JWT Token) to be used as a post body.
+This digital signature is an encoded version of your JSON body. 
 
-- sample-authentication-code: This contains code scripts for generating digital signatures (also known as JWTs), gathering access tokens and generating certificates.
-- backend-example: This is a fully functioning server that can handle sending requests to our APIs. (Coming soon to all languages!)
+This example code shows you how to generate the digital signature to hit the POST endpoints on our APIs.
+We have generated the initial code using the ChatGPT API and then corrected errors manually.
 
-**Note this is not production code and is supplied to get developers started **
+## How to run locally
+
+You can manually clone and configure the example yourself:
+
+```
+git clone https://github.com/jpmorgan-payments/digital-signature.git
+```
+
+This example includes several different language implementations.
+
+Pick a programming langauge:
+
+- [Go](./go/)
+- [JavaScript](./js/)
+- [Python](./python/)
+- [Java](./java/)
 
 ### Generating test certificates
 
-You can follow the below commands to get setup with some testing certificates. To use these against J.P. Morgan APIs you will need to onboard them on [developer.jpmorgan.com](https://developer.jpmorgan.com)
+You can follow the below commands to get setup with some testing certificates. To use these against J.P. Morgan APIs you will need to onboard them on [developer.jpmorgan.com](developer.jpmorgan.com)
 
 ```bash
 openssl genrsa -out keypair.pem 2048
