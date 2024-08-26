@@ -129,14 +129,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# npm
-package-lock.json
-
 __pycache__
 launch.json
 target
-.pytest_cache
-
-
-application-local.yml
-.idea
