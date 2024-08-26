@@ -1,16 +1,10 @@
-# Digital Signature Java
+# J.P. Morgan Authentication examples - Java
 
-A Java implementation of generating a digital signature
+Within this repository you can find example code for accessing our Payments APIs in Java.
 
-## Requirements
+Each folder contains:
 
-- Java installed
-- Configured environment variables
+- sample-authentication-code: This contains code scripts for generating digital signatures (also known as JWTs), gathering access tokens and generating certificates.
+- backend-example: This is a fully functioning server that can handle sending requests to our APIs.
 
-## How to run
-
-You can run this code by running the tests or by including it in your codebase.
-
-1. Add your PUBLIC/PRIVATE key into environment variables. You can find information on generating certificates at in our [readme](../README.md)
-
-2. Run the test in [the test folder](./src/test/java/com/jpmorgan/payments/digital_signature/JWTTest.java)
+**Note this is not production code and is supplied to get developers started **

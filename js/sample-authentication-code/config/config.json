@@ -1,0 +1,14 @@
+{
+  "client_id": "<Enter data>",
+  "certPath": "./config/<Enter filename>.pem",
+  "jti": "12345",
+  "privateKey": "./config/<Enter filename>.key",
+  "audience": "https://idag2.jpmorganchase.com/adfs/oauth2/token",
+  "expiresIn": "8h",
+  "algorithm": "RS256",
+  "client_assertion_type": "urn:ietf:params:oauth:client-assertion-type:jwt-bearer",
+  "grant_type": "client_credentials",
+  "resource_id": "<Enter data>",
+  "ida_url": "https://idag2.jpmorganchase.com/adfs/oauth2/token",
+  "content_type": "application/x-www-form-urlencoded"
+}

@@ -1,30 +1,10 @@
-# Digital Signature Python
+# J.P. Morgan Authentication examples - Python
 
-A python implementation of generating a digital signature
+Within this repository you can find example code for accessing our Payments APIs in Python.
 
-## Requirements
+Each folder contains:
 
-- Python3 install
-- [Configured .env file](../README.md)
+- sample-authentication-code: This contains code scripts for generating digital signatures (also known as JWTs), gathering access tokens and generating certificates.
+- backend-example: This is a fully functioning server that can handle sending requests to our APIs.
 
-## How to run
-
-You can run this code by running the tests or by including it in your codebase.
-
-1. Confirm `.env` configuration
-
-Ensure the certificate keys are configured in `.env` in this directory. You can find information on generating certificates at in our [readme](../README.md).It should include the following keys:
-
-```yaml
-PRIVATE=...
-PUBLIC=
-```
-
-2. Paste your json body into the body variable
-
-3. Install dependencies and start the test
-
-```
-pip install -r requirements.txt
-python digital_signature_test.py
-```
+**Note this is not production code and is supplied to get developers started **
