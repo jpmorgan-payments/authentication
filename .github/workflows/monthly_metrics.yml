@@ -24,7 +24,7 @@ jobs:
       - name: Run shell script - Monthly Clones
         run: |
           chmod +x monthly_clones.sh
-          ./monthly_traffic.sh $(date -d "-1 month" +'%Y-%m')
+          ./monthly_clones.sh $(date -d "-1 month" +'%Y-%m')
       - name: Run shell script - Monthly Clones
         run: |
           chmod +x monthly_traffic.sh
