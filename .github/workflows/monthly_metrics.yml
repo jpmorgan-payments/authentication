@@ -24,11 +24,11 @@ jobs:
       - name: Run shell script - Monthly Clones
         run: |
           chmod +x monthly_clones.sh
-          ./monthly_clones.sh $(date -d "$(date +%Y-%m-1) -1 month")
+          ./monthly_traffic.sh $(date -d "-1 month" +'%Y-%m')
       - name: Run shell script - Monthly Clones
         run: |
           chmod +x monthly_traffic.sh
-          ./monthly_traffic.sh $(date -d "$(date +%Y-%m-1) -1 month")
+          ./monthly_traffic.sh $(date -d "-1 month" +'%Y-%m')
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
