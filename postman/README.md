@@ -7,7 +7,7 @@ Follow these steps to seamlessly import this file into your Postman environment:
 ## Using the OAuth Collection
 
 1. Import the collection into Postman.
-2. Refer to this guide to obtain your CLIENT_ID and CLIENT_SECRET: [J.P. Morgan Quick Start](https://developer.payments.jpmorgan.com/quick-start)
+2. Refer to this guide to obtain your CLIENT_ID and CLIENT_SECRET: [J.P. Morgan Quick Start](https://developer.payments.jpmorgan.com/docs/quick-start)
 3. Insert the acquired values into the authorization section of the 'getAccessToken' request within the OAuth folder.
 4. Execute the 'getAccessToken' request.
 5. Proceed to execute other requests as needed.
