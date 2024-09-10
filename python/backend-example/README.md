@@ -12,7 +12,7 @@ Each sample is categorised by the authentication method you will use.
 
 ## How to run - OAuth
 
-1. Configure a '.env' file in the repository by adding your CLIENT_ID and CLIENT_SECRET, directions can be followed here: [https://developer.payments.jpmorgan.com/quick-start#add-an-api-to-your-project](https://developer.payments.jpmorgan.com/quick-start#add-an-api-to-your-project) (** this file should not be committed**)
+1. Configure a '.env' file in the repository by adding your CLIENT_ID and CLIENT_SECRET, directions can be followed here: [https://developer.payments.jpmorgan.com/quick-start#add-an-api-to-your-project](https://developer.payments.jpmorgan.com/docs/quick-start#add-an-api-to-your-project) (** this file should not be committed**)
 
 2. Install dependencies and start the server
 
