@@ -1,3 +1,0 @@
-# Certificates
-
-Public J.P. Morgan certificates coming soon...
