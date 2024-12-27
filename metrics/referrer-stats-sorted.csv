@@ -1,5 +1,5 @@
 repository_name,site,views,unique_visitors/cloners
-authentication,Bing,2,1
+authentication,Bing,1,1
 authentication,Google,20,5
 authentication,blog.gaiacloud.jpmchase.net,3,1
 authentication,blog.prod.aws.jpmchase.net,1,1
@@ -20,7 +20,7 @@ authentication,jira.expedia.biz,1,1
 authentication,jpmchase.secure.virtru.com,3,1
 authentication,jpmorganchase.github.io,2,1
 authentication,kustomus.samanage.com,18,1
-authentication,mail.google.com,9,1
+authentication,mail.google.com,1,1
 authentication,mibc-fr-09.mailinblack.com,1,1
 authentication,online-payments-dev.com,1,1
 authentication,payments-preview.prod.aws.jpmchase.net,1,1
