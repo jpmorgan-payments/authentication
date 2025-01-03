@@ -323,7 +323,7 @@ authentication,2024-12-16,2,1
 authentication,2024-12-17,2,1
 authentication,2024-12-18,2,1
 authentication,2024-12-19,2,2
-authentication,2024-12-20,3,2
+authentication,2024-12-20,1,1
 authentication,2024-12-21,3,2
 authentication,2024-12-22,3,2
 authentication,2024-12-23,4,2
@@ -336,4 +336,5 @@ authentication,2024-12-29,2,1
 authentication,2024-12-30,3,2
 authentication,2024-12-31,2,1
 authentication,2025-01-01,4,2
-authentication,2025-01-02,1,1
+authentication,2025-01-02,2,1
+authentication,2025-01-03,1,1
