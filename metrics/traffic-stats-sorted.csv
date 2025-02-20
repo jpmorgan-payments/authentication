@@ -316,7 +316,7 @@ authentication,2025-02-02,19,3
 authentication,2025-02-03,1,1
 authentication,2025-02-04,32,8
 authentication,2025-02-05,13,4
-authentication,2025-02-06,89,8
+authentication,2025-02-06,85,6
 authentication,2025-02-07,25,4
 authentication,2025-02-08,14,4
 authentication,2025-02-09,5,1
@@ -329,4 +329,5 @@ authentication,2025-02-15,51,4
 authentication,2025-02-16,1,1
 authentication,2025-02-17,9,7
 authentication,2025-02-18,121,10
-authentication,2025-02-19,19,5
+authentication,2025-02-19,78,13
+authentication,2025-02-20,2,2
