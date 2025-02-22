@@ -9,12 +9,12 @@ authentication,com.google.android.gm,11,1
 authentication,confluence.prod.aws.jpmchase.net,1,1
 authentication,developer-console.uat.aws.jpmchase.net,18,2
 authentication,developer-test.payments.jpmorgan.com,2,1
-authentication,developer.payments.jpmorgan.com,323,35
+authentication,developer.payments.jpmorgan.com,336,34
 authentication,edgeservices.bing.com,1,1
 authentication,embedded-banking-dev.com,1,1
 authentication,excel.officeapps.live.com,6,1
 authentication,gateway.zscalertwo.net,12,1
-authentication,github.com,16,6
+authentication,github.com,11,6
 authentication,global-payments-dev.com,1,1
 authentication,ixolit.atlassian.net,4,1
 authentication,jira.expedia.biz,1,1
@@ -27,7 +27,7 @@ authentication,online-payments-dev.com,1,1
 authentication,payments-preview.prod.aws.jpmchase.net,2,2
 authentication,perplexity.ai,2,1
 authentication,sp006.jpmchase.net,2,1
-authentication,statics.teams.cdn.office.net,4,1
+authentication,statics.teams.cdn.office.net,5,1
 authentication,support.elysium.ltd.uk,7,2
 authentication,t.co,2,2
 authentication,teams.microsoft.com,2,1
