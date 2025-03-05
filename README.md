@@ -11,13 +11,14 @@ Each folder contains:
 
 ### Generating test certificates
 
-You can follow the below commands to get setup with some testing certificates to get the code running. To use mTLS authentication with J.P. Morgan APIs follow the steps on our developer portal at: [https://developer.payments.jpmorgan.com/api/authentication](https://developer.payments.jpmorgan.com/api/authentication)
+You can follow the below commands to get setup with some testing certificates to get the code running. 
 
 ```bash
 openssl genrsa -out keypair.pem 2048
 openssl rsa -in keypair.pem -pubout -out publickey.crt
 openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in keypair.pem -out pkcs8.key
 ```
+To use mTLS authentication with J.P. Morgan APIs follow the steps on our developer portal at: [https://developer.payments.jpmorgan.com/api/authentication](https://developer.payments.jpmorgan.com/api/authentication)
 
 ## Contribution
 
