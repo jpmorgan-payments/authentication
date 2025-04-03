@@ -7,10 +7,11 @@ authentication,blog.prod.aws.jpmchase.net,1,1
 authentication,blog.test.aws.jpmchase.net,30,2
 authentication,com.google.android.gm,11,1
 authentication,confluence.prod.aws.jpmchase.net,2,1
+authentication,confluence.sephora.com,28,1
 authentication,developer-console.prod.aws.jpmchase.net,15,1
 authentication,developer-console.uat.aws.jpmchase.net,2,2
 authentication,developer-test.payments.jpmorgan.com,2,1
-authentication,developer.payments.jpmorgan.com,290,30
+authentication,developer.payments.jpmorgan.com,278,30
 authentication,edgeservices.bing.com,1,1
 authentication,embedded-banking-dev.com,1,1
 authentication,excel.officeapps.live.com,6,1
