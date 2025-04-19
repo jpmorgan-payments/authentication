@@ -1,6 +1,6 @@
 repository_name,site,views,unique_visitors/cloners
 authentication,Bing,3,1
-authentication,Google,28,8
+authentication,Google,39,9
 authentication,ariessolutions.atlassian.net,2,1
 authentication,blog.gaiacloud.jpmchase.net,3,1
 authentication,blog.prod.aws.jpmchase.net,1,1
@@ -31,7 +31,7 @@ authentication,online-payments-dev.com,1,1
 authentication,payments-preview.prod.aws.jpmchase.net,3,2
 authentication,perplexity.ai,2,1
 authentication,sp006.jpmchase.net,2,1
-authentication,statics.teams.cdn.office.net,14,2
+authentication,statics.teams.cdn.office.net,15,3
 authentication,support.elysium.ltd.uk,4,1
 authentication,t.co,2,2
 authentication,teams.microsoft.com,2,1
