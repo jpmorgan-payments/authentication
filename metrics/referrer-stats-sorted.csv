@@ -1,6 +1,6 @@
 repository_name,site,views,unique_visitors/cloners
 authentication,Bing,1,1
-authentication,Google,16,4
+authentication,Google,15,3
 authentication,ariessolutions.atlassian.net,2,1
 authentication,blog.gaiacloud.jpmchase.net,3,1
 authentication,blog.prod.aws.jpmchase.net,1,1
