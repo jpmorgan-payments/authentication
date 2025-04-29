@@ -13,7 +13,7 @@
         "axios": "^1.7.4",
         "dotenv": "^16.0.3",
         "express": "^4.19.2",
-        "http-proxy-middleware": "^2.0.6",
+        "http-proxy-middleware": "^2.0.9",
         "jsonwebtoken": "^9.0.2",
         "qs": "^6.11.2"
     }
