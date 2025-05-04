@@ -11,7 +11,7 @@ authentication,confluence.sephora.com,5,2
 authentication,developer-console.prod.aws.jpmchase.net,15,1
 authentication,developer-console.uat.aws.jpmchase.net,2,2
 authentication,developer-test.payments.jpmorgan.com,2,1
-authentication,developer.payments.jpmorgan.com,167,26
+authentication,developer.payments.jpmorgan.com,112,25
 authentication,edgeservices.bing.com,1,1
 authentication,embedded-banking-dev.com,1,1
 authentication,excel.officeapps.live.com,6,1
