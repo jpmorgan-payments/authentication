@@ -1,6 +1,6 @@
 repository_name,site,views,unique_visitors/cloners
 authentication,Bing,3,1
-authentication,Google,62,5
+authentication,Google,60,6
 authentication,ariessolutions.atlassian.net,2,1
 authentication,blog.gaiacloud.jpmchase.net,3,1
 authentication,blog.prod.aws.jpmchase.net,1,1
@@ -13,7 +13,7 @@ authentication,dev.azure.com,1,1
 authentication,developer-console.prod.aws.jpmchase.net,15,1
 authentication,developer-console.uat.aws.jpmchase.net,2,2
 authentication,developer-test.payments.jpmorgan.com,1,1
-authentication,developer.payments.jpmorgan.com,158,22
+authentication,developer.payments.jpmorgan.com,139,21
 authentication,edgeservices.bing.com,1,1
 authentication,embedded-banking-dev.com,1,1
 authentication,excel.officeapps.live.com,6,1
