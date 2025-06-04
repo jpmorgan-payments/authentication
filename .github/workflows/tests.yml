@@ -23,6 +23,10 @@ env:
   CERTIFICATE_BASE64: ${{ secrets.CERTIFICATE_BASE64 }}
   CERTIFICATE_PATH: ${{secrets.CERTIFICATE_PATH}}
   CERTIFICATE_KEY_PATH: ${{secrets.CERTIFICATE_KEY_PATH }}
+  PUBLIC_KEY_PATH_DIGITAL: ${{secrets.PUBLIC_KEY_PATH_DIGITAL}}
+  PRIVATE_KEY_PATH_DIGITAL: ${{secrets.PRIVATE_KEY_PATH_DIGITAL}}
+  PUBLIC_KEY_DIGITAL_BASE64: ${{ secrets.PUBLIC_KEY_DIGITAL_BASE64 }}
+  PRIVATE_KEY_DIGITAL_BASE64: ${{ secrets.PRIVATE_KEY_DIGITAL_BASE64 }}
 
 permissions:
   contents: read
@@ -49,6 +53,9 @@ jobs:
           cd tests
           echo "$CERTIFICATE_BASE64" | base64 --decode > "$CERTIFICATE_PATH" 
           echo "$KEY_BASE64" | base64 --decode > "$CERTIFICATE_KEY_PATH"
+          echo "$PUBLIC_KEY_DIGITAL_BASE64" | base64 --decode > "$PUBLIC_KEY_PATH_DIGITAL"
+          echo "$PRIVATE_KEY_DIGITAL_BASE64" | base64 --decode > "$PRIVATE_KEY_PATH_DIGITAL"
+
       - name: Test with pytest
         run: |
           cd tests

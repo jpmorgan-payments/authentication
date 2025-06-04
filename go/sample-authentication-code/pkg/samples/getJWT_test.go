@@ -17,7 +17,7 @@ func TestDigSignGenerated(t *testing.T) {
 			return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
 		}
 		// Load the public key from the .env file
-		publicKey, err := os.ReadFile(os.Getenv("PUBLIC_KEY_PATH"))
+		publicKey, err := os.ReadFile(os.Getenv("PUBLIC_KEY_PATH_DIGITAL"))
 		if err != nil {
 			return nil, fmt.Errorf("Failed to read public key: %v", err)
 		}

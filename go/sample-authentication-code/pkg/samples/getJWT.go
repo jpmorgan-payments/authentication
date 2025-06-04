@@ -12,7 +12,7 @@ import (
 )
 
 func GenerateDigitalSignature(body map[string]interface{}) string {
-	digital_key, err := os.ReadFile(os.Getenv("PRIVATE_KEY_PATH"))
+	digital_key, err := os.ReadFile(os.Getenv("PRIVATE_KEY_PATH_DIGITAL"))
 	if err != nil {
 		fmt.Println("Error reading private key:", err)
 		return ""
