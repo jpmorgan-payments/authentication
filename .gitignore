@@ -140,3 +140,5 @@ target
 
 application-local.yml
 .idea
+certificates
+constants.py
