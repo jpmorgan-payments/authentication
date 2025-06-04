@@ -1,9 +1,12 @@
 package samples
 
 /*
-This shows how to send your first request to our OAuth protected APIs.
-It takes in a payload, API Url and then an access token.
-* */
+The below method sends a request to the API using mTls.
+ You will need to provide the certificate and key paths for mTls authentication as environment variables.
+ To upload the certificate and key, you can follow the instructions in the documentation.
+ https://developer.payments.jpmorgan.com/api/mtls-with-digital-signature
+ You can use this code as a reference.
+*/
 
 import (
 	"crypto/tls"
