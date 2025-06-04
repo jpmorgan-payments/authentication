@@ -21,8 +21,6 @@ env:
   CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
   KEY_BASE64: ${{ secrets.KEY_BASE64 }}
   CERTIFICATE_BASE64: ${{ secrets.CERTIFICATE_BASE64 }}
-  CERTIFICATE_KEY_PATH: ${{ secrets.CERTIFICATE_KEY_PATH}}
-  CERTIFICATE_PATH: ${{ secrets.CERTIFICATE_PATH}}
 
 permissions:
   contents: read
@@ -46,11 +44,13 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Retrieve the secret and decode it to a file
         run: |
-          echo "$CERTIFICATE_BASE64" | base64 --decode > "$CERTIFICATE_PATH" 
-          echo "$KEY_BASE64" | base64 --decode > "$CERTIFICATE_KEY_PATH"  
+          echo "$CERTIFICATE_BASE64" | base64 --decode > tests/"$CERTIFICATE_PATH" 
+          echo "$KEY_BASE64" | base64 --decode > tests/"$CERTIFICATE_KEY_PATH"
+          ls
       - name: Test with pytest
         run: |
           cd tests
+          ls
           pytest
   test-go:
     runs-on: ubuntu-latest
