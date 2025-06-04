@@ -52,8 +52,6 @@ jobs:
       - name: Test with pytest
         run: |
           cd tests
-          ls
-          cat "$CERTIFICATE_PATH"
           pytest
   test-go:
     runs-on: ubuntu-latest
