@@ -21,6 +21,8 @@ env:
   CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
   KEY_BASE64: ${{ secrets.KEY_BASE64 }}
   CERTIFICATE_BASE64: ${{ secrets.CERTIFICATE_BASE64 }}
+  CERTIFICATE_PATH: ${{secrets.CERTIFICATE_PATH}}
+  CERTIFICATE_KEY_PATH: ${{secrets.CERTIFICATE_KEY_PATH }}
 
 permissions:
   contents: read
