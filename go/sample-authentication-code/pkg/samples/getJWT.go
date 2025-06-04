@@ -6,11 +6,18 @@ You will need to provide your signing key and the body you wish to encode.
 */
 import (
 	"fmt"
+	"os"
 
 	"github.com/golang-jwt/jwt/v5"
 )
 
-func GenerateDigitalSignature(digital_key string, body map[string]interface{}) string {
+func GenerateDigitalSignature(body map[string]interface{}) string {
+	digital_key, err := os.ReadFile(os.Getenv("PRIVATE_KEY_PATH"))
+	if err != nil {
+		fmt.Println("Error reading private key:", err)
+		return ""
+	}
+	// Create a new JWT token with the RS256 signing method and the provided body
 	token := jwt.NewWithClaims(jwt.SigningMethodRS256, jwt.MapClaims(body))
 	signKey, err := jwt.ParseRSAPrivateKeyFromPEM([]byte(digital_key))
 	if err != nil {
