@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: ["main", "feature/auto-test"]
-  pull_request:
+  pull_request_target:
     branches: ["main"]
 env:
   # Purely testing keys that have no access to JP systems etc.
@@ -19,6 +19,11 @@ env:
   ACCESS_TOKEN_URL: ${{ secrets.ACCESS_TOKEN_URL }}
   CLIENT_ID: ${{ secrets.CLIENT_ID }}
   CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+  KEY_BASE64: ${{ secrets.KEY_BASE64 }}
+  CERTIFICATE_BASE64: ${{ secrets.CERTIFICATE_BASE64 }}
+  CERTIFICATE_PATH: ${{secrets.CERTIFICATE_PATH}}
+  CERTIFICATE_KEY_PATH: ${{secrets.CERTIFICATE_KEY_PATH }}
+
 permissions:
   contents: read
 
@@ -39,6 +44,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Retrieve the secret and decode it to a file
+        run: |
+          cd tests
+          echo "$CERTIFICATE_BASE64" | base64 --decode > "$CERTIFICATE_PATH" 
+          echo "$KEY_BASE64" | base64 --decode > "$CERTIFICATE_KEY_PATH"
       - name: Test with pytest
         run: |
           cd tests
