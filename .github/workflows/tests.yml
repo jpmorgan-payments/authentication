@@ -46,8 +46,8 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Retrieve the secret and decode it to a file
         run: |
-          echo $CERTIFICATE_BASE64 | base64 --decode > $CERTIFICATE_PATH 
-          echo $KEY_BASE64 | base64 --decode > $CERTIFICATE_KEY_PATH  
+          echo "$CERTIFICATE_BASE64" | base64 --decode > "$CERTIFICATE_PATH" 
+          echo "$KEY_BASE64" | base64 --decode > "$CERTIFICATE_KEY_PATH"  
       - name: Test with pytest
         run: |
           cd tests
