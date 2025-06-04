@@ -27,7 +27,6 @@ func TestDigSignGenerated(t *testing.T) {
 		}
 		return key, nil
 	})
-base64 -i unicorn-finance-dev.com.crt -o cert_dig.base64  
 	// Check if the token was parsed and verified successfully
 	if err != nil {
 		t.Errorf("Failed to verify token: %v", err)
