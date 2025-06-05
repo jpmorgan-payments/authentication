@@ -405,7 +405,7 @@ authentication,2025-05-18,1,1
 authentication,2025-05-19,35,7
 authentication,2025-05-20,40,8
 authentication,2025-05-21,50,7
-authentication,2025-05-22,71,12
+authentication,2025-05-22,23,7
 authentication,2025-05-23,72,14
 authentication,2025-05-24,1,1
 authentication,2025-05-25,22,1
@@ -418,4 +418,5 @@ authentication,2025-05-31,1,1
 authentication,2025-06-01,9,2
 authentication,2025-06-02,137,19
 authentication,2025-06-03,89,12
-authentication,2025-06-04,45,5
+authentication,2025-06-04,246,19
+authentication,2025-06-05,19,8
