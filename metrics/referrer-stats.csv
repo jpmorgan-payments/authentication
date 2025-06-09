@@ -30,7 +30,7 @@ authentication,gemini.google.com,1,1
 authentication,theforage.com,2,1
 authentication,payments-preview.prod.aws.jpmchase.net,3,2
 authentication,support.elysium.ltd.uk,4,1
-authentication,github.com,44,7
+authentication,github.com,40,6
 authentication,cp2.symphony.com,2,1
 authentication,Bing,1,1
 authentication,jpmchase.secure.virtru.com,4,1
@@ -41,5 +41,5 @@ authentication,blog.prod.aws.jpmchase.net,1,1
 authentication,ixolit.atlassian.net,4,1
 authentication,mibc-fr-09.mailinblack.com,1,1
 authentication,statics.teams.cdn.office.net,5,3
-authentication,ariessolutions.atlassian.net,2,1
 authentication,embedded-banking-dev.com,1,1
+authentication,ariessolutions.atlassian.net,2,1
