@@ -1,5 +1,5 @@
 repository_name,site,views,unique_visitors/cloners
-authentication,developer.payments.jpmorgan.com,87,13
+authentication,developer.payments.jpmorgan.com,83,13
 authentication,jpmorganchase.github.io,2,1
 authentication,kustomus.samanage.com,18,1
 authentication,online-payments-dev.com,1,1
@@ -7,7 +7,7 @@ authentication,gateway.zscalertwo.net,12,1
 authentication,blog.gaiacloud.jpmchase.net,3,1
 authentication,perplexity.ai,2,1
 authentication,mvsi.atlassian.net,1,1
-authentication,Google,16,8
+authentication,Google,19,8
 authentication,visawiki.trusted.visa.com,16,2
 authentication,jira.sephora.com,4,1
 authentication,teams.microsoft.com,2,1
@@ -17,10 +17,10 @@ authentication,blog.test.aws.jpmchase.net,30,2
 authentication,confluence.prod.aws.jpmchase.net,20,1
 authentication,chatgpt.com,1,1
 authentication,global-payments-dev.com,1,1
-authentication,confluence.sephora.com,24,1
+authentication,confluence.sephora.com,17,1
 authentication,dev.azure.com,1,1
 authentication,edgeservices.bing.com,1,1
-authentication,mail.google.com,2,1
+authentication,mail.google.com,4,1
 authentication,com.google.android.gm,11,1
 authentication,developer-test.payments.jpmorgan.com,4,1
 authentication,developer-console.prod.aws.jpmchase.net,2,2
@@ -30,9 +30,9 @@ authentication,gemini.google.com,1,1
 authentication,theforage.com,2,1
 authentication,payments-preview.prod.aws.jpmchase.net,3,2
 authentication,support.elysium.ltd.uk,4,1
-authentication,github.com,43,6
+authentication,github.com,46,8
 authentication,cp2.symphony.com,2,1
-authentication,Bing,1,1
+authentication,Bing,7,2
 authentication,jpmchase.secure.virtru.com,4,1
 authentication,t.co,2,2
 authentication,sp006.jpmchase.net,2,1
@@ -40,6 +40,6 @@ authentication,jiradc-cib-cluster02.prod.aws.jpmchase.net,8,1
 authentication,blog.prod.aws.jpmchase.net,1,1
 authentication,ixolit.atlassian.net,4,1
 authentication,mibc-fr-09.mailinblack.com,1,1
-authentication,statics.teams.cdn.office.net,5,3
-authentication,ariessolutions.atlassian.net,2,1
+authentication,statics.teams.cdn.office.net,5,2
 authentication,embedded-banking-dev.com,1,1
+authentication,ariessolutions.atlassian.net,2,1
