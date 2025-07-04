@@ -1,6 +1,6 @@
 repository_name,site,views,unique_visitors/cloners
 authentication,Bing,6,1
-authentication,Google,56,13
+authentication,Google,51,11
 authentication,ariessolutions.atlassian.net,2,1
 authentication,blog.gaiacloud.jpmchase.net,3,1
 authentication,blog.prod.aws.jpmchase.net,1,1
@@ -10,7 +10,7 @@ authentication,com.google.android.gm,11,1
 authentication,confluence.prod.aws.jpmchase.net,7,2
 authentication,confluence.sephora.com,9,1
 authentication,cp2.symphony.com,2,1
-authentication,dev.azure.com,10,4
+authentication,dev.azure.com,11,5
 authentication,developer-console.prod.aws.jpmchase.net,2,2
 authentication,developer-console.uat.aws.jpmchase.net,2,2
 authentication,developer-test.payments.jpmorgan.com,4,1
@@ -20,7 +20,7 @@ authentication,embedded-banking-dev.com,1,1
 authentication,excel.officeapps.live.com,6,1
 authentication,gateway.zscalertwo.net,12,1
 authentication,gemini.google.com,1,1
-authentication,github.com,11,5
+authentication,github.com,10,4
 authentication,global-payments-dev.com,1,1
 authentication,ixolit.atlassian.net,4,1
 authentication,jira.expedia.biz,1,1
@@ -42,4 +42,4 @@ authentication,support.elysium.ltd.uk,4,1
 authentication,t.co,2,2
 authentication,teams.microsoft.com,2,1
 authentication,theforage.com,2,1
-authentication,visawiki.trusted.visa.com,9,2
+authentication,visawiki.trusted.visa.com,8,1
