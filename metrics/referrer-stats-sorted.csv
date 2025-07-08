@@ -1,6 +1,6 @@
 repository_name,site,views,unique_visitors/cloners
 authentication,Bing,6,1
-authentication,Google,49,9
+authentication,Google,42,9
 authentication,ariessolutions.atlassian.net,2,1
 authentication,blog.gaiacloud.jpmchase.net,3,1
 authentication,blog.prod.aws.jpmchase.net,1,1
@@ -10,17 +10,17 @@ authentication,com.google.android.gm,11,1
 authentication,confluence.prod.aws.jpmchase.net,7,2
 authentication,confluence.sephora.com,9,1
 authentication,cp2.symphony.com,2,1
-authentication,dev.azure.com,11,5
+authentication,dev.azure.com,4,4
 authentication,developer-console.prod.aws.jpmchase.net,2,2
 authentication,developer-console.uat.aws.jpmchase.net,2,2
 authentication,developer-test.payments.jpmorgan.com,4,1
-authentication,developer.payments.jpmorgan.com,120,14
+authentication,developer.payments.jpmorgan.com,172,18
 authentication,edgeservices.bing.com,1,1
 authentication,embedded-banking-dev.com,1,1
 authentication,excel.officeapps.live.com,6,1
 authentication,gateway.zscalertwo.net,12,1
 authentication,gemini.google.com,1,1
-authentication,github.com,10,4
+authentication,github.com,11,5
 authentication,global-payments-dev.com,1,1
 authentication,ixolit.atlassian.net,4,1
 authentication,jira.expedia.biz,1,1
@@ -31,7 +31,7 @@ authentication,jpmorganchase.github.io,2,1
 authentication,kustomus.samanage.com,18,1
 authentication,mail.google.com,7,1
 authentication,mibc-fr-09.mailinblack.com,1,1
-authentication,mvsi.atlassian.net,5,1
+authentication,mvsi.atlassian.net,1,1
 authentication,online-payments-dev.com,1,1
 authentication,payments-preview.prod.aws.jpmchase.net,3,2
 authentication,perplexity.ai,2,1
