@@ -1,5 +1,5 @@
 repository_name,site,views,unique_visitors/cloners
-authentication,developer.payments.jpmorgan.com,168,16
+authentication,developer.payments.jpmorgan.com,176,17
 authentication,jpmorganchase.github.io,2,1
 authentication,kustomus.samanage.com,18,1
 authentication,online-payments-dev.com,1,1
@@ -40,6 +40,6 @@ authentication,jiradc-cib-cluster02.prod.aws.jpmchase.net,8,1
 authentication,blog.prod.aws.jpmchase.net,1,1
 authentication,ixolit.atlassian.net,4,1
 authentication,mibc-fr-09.mailinblack.com,1,1
-authentication,statics.teams.cdn.office.net,18,4
-authentication,embedded-banking-dev.com,1,1
+authentication,statics.teams.cdn.office.net,20,6
 authentication,ariessolutions.atlassian.net,2,1
+authentication,embedded-banking-dev.com,1,1
