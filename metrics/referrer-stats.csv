@@ -1,5 +1,5 @@
 repository_name,site,views,unique_visitors/cloners
-authentication,developer.payments.jpmorgan.com,195,23
+authentication,developer.payments.jpmorgan.com,261,27
 authentication,jpmorganchase.github.io,2,1
 authentication,kustomus.samanage.com,18,1
 authentication,online-payments-dev.com,1,1
@@ -15,7 +15,7 @@ authentication,qiye.aliyun.com,3,1
 authentication,jira.expedia.biz,1,1
 authentication,blog.test.aws.jpmchase.net,30,2
 authentication,confluence.prod.aws.jpmchase.net,4,1
-authentication,chatgpt.com,1,1
+authentication,chatgpt.com,3,1
 authentication,global-payments-dev.com,1,1
 authentication,confluence.sephora.com,9,1
 authentication,dev.azure.com,3,3
@@ -41,5 +41,5 @@ authentication,blog.prod.aws.jpmchase.net,1,1
 authentication,ixolit.atlassian.net,4,1
 authentication,mibc-fr-09.mailinblack.com,1,1
 authentication,statics.teams.cdn.office.net,24,8
-authentication,embedded-banking-dev.com,1,1
 authentication,ariessolutions.atlassian.net,2,1
+authentication,embedded-banking-dev.com,1,1
