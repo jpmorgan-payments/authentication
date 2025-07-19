@@ -520,7 +520,7 @@ authentication,2025-07-01,1,1
 authentication,2025-07-02,4,3
 authentication,2025-07-03,3,2
 authentication,2025-07-04,2,1
-authentication,2025-07-05,5,4
+authentication,2025-07-05,1,1
 authentication,2025-07-06,5,4
 authentication,2025-07-07,5,4
 authentication,2025-07-08,5,4
@@ -533,4 +533,5 @@ authentication,2025-07-14,6,5
 authentication,2025-07-15,11,10
 authentication,2025-07-16,4,3
 authentication,2025-07-17,4,3
-authentication,2025-07-18,2,2
+authentication,2025-07-18,6,4
+authentication,2025-07-19,1,1
