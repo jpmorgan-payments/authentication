@@ -20,7 +20,7 @@ authentication,embedded-banking-dev.com,1,1
 authentication,excel.officeapps.live.com,6,1
 authentication,gateway.zscalertwo.net,12,1
 authentication,gemini.google.com,1,1
-authentication,github.com,2,1
+authentication,github.com,5,2
 authentication,global-payments-dev.com,1,1
 authentication,ixolit.atlassian.net,4,1
 authentication,jira.expedia.biz,1,1
@@ -38,7 +38,7 @@ authentication,payments-preview.prod.aws.jpmchase.net,3,2
 authentication,perplexity.ai,2,1
 authentication,qiye.aliyun.com,3,1
 authentication,sp006.jpmchase.net,2,2
-authentication,statics.teams.cdn.office.net,9,5
+authentication,statics.teams.cdn.office.net,8,4
 authentication,support.elysium.ltd.uk,4,1
 authentication,t.co,2,2
 authentication,teams.microsoft.com,2,1
