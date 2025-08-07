@@ -539,7 +539,7 @@ authentication,2025-07-20,4,3
 authentication,2025-07-21,4,3
 authentication,2025-07-22,3,2
 authentication,2025-07-23,3,2
-authentication,2025-07-24,6,5
+authentication,2025-07-24,1,1
 authentication,2025-07-25,7,6
 authentication,2025-07-26,6,5
 authentication,2025-07-27,7,6
@@ -552,4 +552,5 @@ authentication,2025-08-02,2,1
 authentication,2025-08-03,8,7
 authentication,2025-08-04,4,3
 authentication,2025-08-05,4,3
-authentication,2025-08-06,1,1
+authentication,2025-08-06,3,2
+authentication,2025-08-07,1,1
