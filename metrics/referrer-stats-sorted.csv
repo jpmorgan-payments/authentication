@@ -1,5 +1,6 @@
 repository_name,site,views,unique_visitors/cloners
 authentication,Bing,10,1
+authentication,DuckDuckGo,1,1
 authentication,Google,10,3
 authentication,ariessolutions.atlassian.net,2,1
 authentication,blog.gaiacloud.jpmchase.net,3,1
@@ -10,11 +11,11 @@ authentication,com.google.android.gm,11,1
 authentication,confluence.prod.aws.jpmchase.net,4,1
 authentication,confluence.sephora.com,9,1
 authentication,cp2.symphony.com,2,1
-authentication,dev.azure.com,4,1
+authentication,dev.azure.com,1,1
 authentication,developer-console.prod.aws.jpmchase.net,2,2
 authentication,developer-console.uat.aws.jpmchase.net,2,2
 authentication,developer-test.payments.jpmorgan.com,4,1
-authentication,developer.payments.jpmorgan.com,211,36
+authentication,developer.payments.jpmorgan.com,201,34
 authentication,edgeservices.bing.com,1,1
 authentication,embedded-banking-dev.com,1,1
 authentication,enterprise-confluence.onefiserv.net,7,2
@@ -39,7 +40,7 @@ authentication,payments-preview.prod.aws.jpmchase.net,3,2
 authentication,perplexity.ai,2,1
 authentication,qiye.aliyun.com,3,1
 authentication,sp006.jpmchase.net,1,1
-authentication,statics.teams.cdn.office.net,9,4
+authentication,statics.teams.cdn.office.net,4,4
 authentication,support.elysium.ltd.uk,4,1
 authentication,t.co,2,2
 authentication,teams.microsoft.com,2,1
