@@ -525,7 +525,7 @@ authentication,2025-09-20,2,1
 authentication,2025-09-21,5,3
 authentication,2025-09-22,20,6
 authentication,2025-09-23,23,11
-authentication,2025-09-24,100,18
+authentication,2025-09-24,95,14
 authentication,2025-09-25,117,19
 authentication,2025-09-26,31,12
 authentication,2025-09-27,4,3
@@ -538,4 +538,5 @@ authentication,2025-10-03,11,6
 authentication,2025-10-04,30,6
 authentication,2025-10-05,19,1
 authentication,2025-10-06,32,10
-authentication,2025-10-07,5,5
+authentication,2025-10-07,33,13
+authentication,2025-10-08,18,2
