@@ -641,7 +641,7 @@ authentication,2025-10-31,1,1
 authentication,2025-11-01,4,4
 authentication,2025-11-02,3,2
 authentication,2025-11-03,2,1
-authentication,2025-11-04,4,3
+authentication,2025-11-04,1,1
 authentication,2025-11-05,9,7
 authentication,2025-11-06,4,3
 authentication,2025-11-07,10,6
@@ -654,4 +654,5 @@ authentication,2025-11-13,5,4
 authentication,2025-11-14,7,6
 authentication,2025-11-15,4,3
 authentication,2025-11-16,5,4
-authentication,2025-11-17,1,1
+authentication,2025-11-17,5,4
+authentication,2025-11-18,1,1
