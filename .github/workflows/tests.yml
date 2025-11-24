@@ -42,10 +42,10 @@ jobs:
       - name: Retrieve the secret and decode it to a file
         run: |
           cd tests
-          echo "$CERTIFICATE_BASE64" | base64 --decode > "$CERTIFICATE_PATH" 
-          echo "$KEY_BASE64" | base64 --decode > "$CERTIFICATE_KEY_PATH"
-          echo "$PUBLIC_KEY_DIGITAL_BASE64" | base64 --decode > "$PUBLIC_KEY_PATH_DIGITAL"
-          echo "$PRIVATE_KEY_DIGITAL_BASE64" | base64 --decode > "$PRIVATE_KEY_PATH_DIGITAL"
+          echo $CERTIFICATE_BASE64 | base64 --decode > $CERTIFICATE_PATH
+          echo $KEY_BASE64 | base64 --decode > $CERTIFICATE_KEY_PATH
+          echo $PUBLIC_KEY_DIGITAL_BASE64 | base64 --decode > $PUBLIC_KEY_PATH_DIGITAL
+          echo $PRIVATE_KEY_DIGITAL_BASE64 | base64 --decode > $PRIVATE_KEY_PATH_DIGITAL
 
       - name: Test with pytest
         run: |
