@@ -12,19 +12,8 @@ load_dotenv()  # Load the environment variables from the .env file
 class TestGenerateDigitalSignature(unittest.TestCase):
 
     def setUp(self):
-        private_key_path = os.environ.get("PRIVATE_KEY_PATH_DIGITAL")
-        public_key_path = os.environ.get("PUBLIC_KEY_PATH_DIGITAL")
-        
-        # Read the private key from the file
-        with open(private_key_path, 'r', encoding='utf-8') as f:
-            self.private_key = f.read()
-        print(f"Private Key Loaded: {self.private_key[:30]}...")  # Print first 30 chars for verification
-        
-        # Read the public key from the file
-        with open(public_key_path, 'r', encoding='utf-8') as f:
-            self.public_key = f.read()
-        print(f"Public Key Loaded: {self.public_key[:30]}...")  # Print first 30 chars for verification
-            
+        self.private_key = os.environ.get("PRIVATE_KEY_PATH_DIGITAL").replace("\\n", "\n")
+        self.public_key = os.environ.get("PUBLIC_KEY_PATH_DIGITAL").replace("\\n", "\n")
         self.body = {"user_id": 123}
 
     def test_generate_digital_signature(self):
